@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+
+ 
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #324252;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .container-fluid, .header, .footer {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+    .header {
+      background-color: #310202;
+      padding: 5px 0;
+      box-shadow: 2px 2px 2px 2px solid black;
+      margin: 1px;
+    }
+    .nav-item button {
+      background-color: #324252;
+      border: none;
+      margin: 1px;
+      padding: 0;
+      transition: background-color 0.3s ease; /* Transition for hover effect */
+    }
+    .nav-link {
+      color: white;
+      padding: 10px 15px;
+      display: block;
+      text-decoration: none;
+    }
+    .nav-link:hover {
+      color: #f3f3f3;
+    }
+    .nav-item button:hover {
+      background-color: #310202; /* New background color on hover */
+    }
+    .footer {
+      background-color: black;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: auto;
+    }
+    .footer a {
+      color: white;
+      text-decoration: none;
+    }
+    .no-underline {
+      text-decoration: none;
+      color: white; /* This keeps the text white to match the rest of your design */
+  }
+  .no-underline:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: lightgray; /* Change color on hover (optional) */
+}
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-between align-items-center">
+          <h4 style="color:white; margin-left: 15px;">PI SYSTEM</h4>
+          <div class="ml-auto d-flex align-items-center">
+            <!-- Dropdown for Profile -->
+            <div class="dropdown" style="margin-right: 1px;">
+              <button class="dropdown-toggle border-0 bg-transparent text-white" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="{{ image8.image.url }}" style="width: 9%;">
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                <li>
+                  <a class="dropdown-item" href="{% url 'resetPassword' user.id %}">
+                    {{ image8.description }}
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  
+<div class="row h-100">
+        <!-- Sidebar -->
+        <div class="col-md-2 bg-danger text-white d-flex flex-column justify-content-start py-4" style=" margin:0px;">
+            <div class="mb-4">
+                <a class="dropdown-item text-white"   href="{% url 'home' %}">Home</a>
+            </div>
+            <div class="mb-4">
+                <a class="dropdown-item text-white"   href="{% url 'home' %}">Register</a>
+            </div>
+           
+            <div class="dropdown mb-4">
+                <button class="dropdown-toggle bg-danger border-0 text-white" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Post</button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item"   href="{% url 'addCategory' %}">Add posts</a></li>
+                    <li><a class="dropdown-item"   href="{% url 'home' %}">Manage posts</a></li>
+                </ul>
+            </div>
+           
+        </div>
+
+
+        <div class="col-md-10  align-items-center justify-content-center" style=" background-size: cover; color:white;text-decoration:None; ">
+          <div class="row">
+          <div class="col-md-4" >
+          <a class="no-underline text-white" href="{% url 'Notepage' %}" >
+          <img src="{{ image1.image.url }}" style="width: 60%; height: 80%; padding:5px ;">
+          <p>{{ image1.description }}</p>
+          </a>
+          </div>
+          <div class="col-md-4" >
+         
+
+            <a class="no-underline text-white" href="{% url 'Uploadpage' %}" >
+              <img src="{{ image2.image.url }}"style="width: 60%; height: 80%; padding:5px ;" >
+              <p>{{ image2.description }}</p>
+              </a>
+    
+      </div>
+      <div class="col-md-4" >
+         
+
+        <a class="no-underline text-white" href="{% url 'Imagespage' %}" >
+          <img src="{{ image3.image.url }}" style="width: 60%; height:80%; padding:5px ;">
+          <p>{{ image3.description }}</p>
+          </a>
+
+  </div>
+
+     
+      
+        </div>
+      
+        <div class="row">
+          <div class="col-md-4" >
+          <a class="no-underline text-white" href="{% url 'Videospage' %}" >
+          <img src="{{ image4.image.url }}" style="width: 60%; height: 80%; padding:5px ;">
+          <p>{{ image4.description }}</p>
+          </a>
+          </div>
+          <div class="col-md-4" >
+
+            <a class="no-underline text-white" href="{% url 'Audiospage' %}" >
+              <img src="{{ image5.image.url }}" style="width: 60%; height: 80%; padding:5px ;">
+              <p>{{ image5.description }}</p>
+              </a>
+    
+      </div>
+      <div class="col-md-4" >
+
+        <a class="no-underline text-white" href="{% url 'Linkpage' %}" >
+          <img src="{{ image6.image.url }}" style="width: 60%; height: 80%; padding:5px ;" >
+          <p>{{ image6.description }}</p>
+          </a>
+
+  </div>
+     
+      
+        </div>
+        <div class="row">
+          <div class="col-md-4" >
+         
+          <a class="no-underline text-white" href="{% url 'Otherpage' %}" >
+          <img src="{{ image7.image.url }}" style="width: 60%; height: 80%; padding:5px ;" >
+          <p>{{ image7.description }}</p>
+          </a>
+          </div>
+        
+      
+     
+      
+        </div>
+    </div>
+  
+
+        <!-- Main Content -->
+        
+   
+<footer class="footer">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 text-center">
+          <p>OUR LOCATION</p>
+          <a href="https://maps.app.goo.gl/zSqETo1k79DFD5Up8">Uhuru, Dar es Salaam, Tanzania</a>
+          <p><a href="https://maps.app.goo.gl/ZnHNa9F8kcqhinY36">Mbezi Beach Rafia, Kituo Kipya, Dar es Salaam</a></p>
+        </div>
+        <div class="col-md-6 text-center">
+          <p>CONTACT US</p>
+          <p>Email: norbeth559@gmail.com</p>
+          <p>Call/WhatsApp: 0747904950</p>
+        </div>
+      </div>
+      <p>&copy; 2024 PIS. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
